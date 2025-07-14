@@ -2,16 +2,17 @@
 
 This project is part of the [freeCodeCamp](https://www.freecodecamp.org/) Relational Database certification. It uses **PostgreSQL** and **Bash scripting** to set up and query a relational database with data related to the FIFA World Cup.
 	
-	----
 
 ## 📁 Project Structure
 
+```bash
 worldcup-DB-main/
 ├── insert_data.sh # Script to insert data from CSV files into the database
 ├── queries.sh # Bash script to execute SQL queries and display output
 └── worldcup.sql # SQL schema to create the database tables 
+```
 
-	----
+	
 
 ## 📝 Overview
 
@@ -66,6 +67,8 @@ This project sets up a PostgreSQL database with information about World Cup game
 Writing CREATE TABLE, INSERT, JOIN, GROUP BY, and SELECT queries
 Using Bash to execute SQL commands
 Understanding relational database concepts
+
+	----
 
 ## 📌 Author
 
