@@ -1,95 +1,76 @@
-# Periodic Table Database
+# World Cup Database Project
 
-This project is part of the **Relational Database Certification** on [freeCodeCamp](https://www.freecodecamp.org/). It includes a PostgreSQL database representing elements from the periodic table and a Bash script to query element details based on user input.
+This project is part of the [freeCodeCamp](https://www.freecodecamp.org/) Relational Database certification. It uses **PostgreSQL** and **Bash scripting** to set up and query a relational database with data related to the FIFA World Cup.
+	
+	----
 
-## 📁 Files Included
+## 📁 Project Structure
 
-- `periodic_table.sql` – PostgreSQL database schema and data.
-- `element.sh` – Bash script to query the database for element information.
+worldcup-DB-main/
+├── insert_data.sh # Script to insert data from CSV files into the database
+├── queries.sh # Bash script to execute SQL queries and display output
+└── worldcup.sql # SQL schema to create the database tables 
 
----
+	----
 
-## 🧪 Features
+## 📝 Overview
 
-- Structured relational database with three main tables:
-  - `elements` – atomic number, symbol, name
-  - `properties` – atomic mass, melting/boiling points, type ID
-  - `types` – classification such as metal, nonmetal, or metalloid
-- Fully normalized schema with appropriate constraints and foreign keys.
-- Query script allows input by:
-  - Atomic number (e.g., `./element.sh 1`)
-  - Element symbol (e.g., `./element.sh He`)
-  - Element name (e.g., `./element.sh Oxygen`)
+This project sets up a PostgreSQL database with information about World Cup games and teams. After creating and populating the database, it runs a series of SQL queries to retrieve interesting statistics, such as:
 
----
+- Total number of goals
+- Average goals per game
+- Winning teams and champions
+- List of teams who played in specific rounds
 
-## 🧱 Database Schema
+	----
 
-- `elements`:
-  - `atomic_number` (Primary Key, Unique)
-  - `symbol` (Unique)
-  - `name` (Unique)
+## ⚙️ Technologies Used
 
-- `properties`:
-  - `atomic_number` (Primary Key, Foreign Key to `elements`)
-  - `atomic_mass`
-  - `melting_point_celsius`
-  - `boiling_point_celsius`
-  - `type_id` (Foreign Key to `types`)
+- **PostgreSQL**
+- **Bash**
+- **SQL**
 
-- `types`:
-  - `type_id` (Primary Key)
-  - `type` (e.g., metal, nonmetal)
+	----
 
----
+## 🚀 Setup Instructions
 
-## 🚀 How to Run
+1. **Install PostgreSQL** (if not already installed):
+   ```bash
+   sudo apt update
+   sudo apt install postgresql postgresql-contrib
+	```
 
-### 1. Load the Database
-```bash
-psql -U postgres < periodic_table.sql
-```
+2. **Start the PostgreSQL** service:
+   ```bash
+   sudo service postgresql start
+	```
 
-### 2. Make the Script Executable
-```bash
-chmod +x element.sh
-```
+3. **Create the database and tables**
+   ```bash
+   psql -U postgres -f worldcup.sql
+	```
 
-### 3. Run the Script
-```bash
-./element.sh 10
-./element.sh He
-./element.sh Oxygen
-```
+4. **Insert the data**
+   ```bash
+   ./insert_data.sh
+	```
 
----
+5. **Run queries to see the results**
+   ```bash
+   ./queries.sh
+	```
+	----
 
-## 🧾 Example Output
+## 🧠 Learning Objectives
 
-```bash
-$ ./element.sh He
-The element with atomic number 2 is Helium (He). It's a nonmetal, with a mass of 4.0026 amu. Helium has a melting point of -272.2 celsius and a boiling point of -269 celsius.
-```
+Writing CREATE TABLE, INSERT, JOIN, GROUP BY, and SELECT queries
+Using Bash to execute SQL commands
+Understanding relational database concepts
 
----
+	----
 
-## ✅ Validations
+## 📌 Author
 
-- Handles missing or invalid arguments
-- Supports flexible input (number, symbol, or name)
-- Prints a clear and detailed description of the element
-- Prints a message if the element is not found
+This project was developed by A Shraddha's as part of freeCodeCamp’s Relational Database Certification.
 
----
 
-## 🛠 Technologies Used
-
-- PostgreSQL 12
-- Bash scripting
-- Linux/Unix environment
-
----
-
-## 📚 License
-
-This project was completed as part of the freeCodeCamp curriculum and is freely available for learning and practice.
