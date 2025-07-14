@@ -68,7 +68,6 @@ Writing CREATE TABLE, INSERT, JOIN, GROUP BY, and SELECT queries
 Using Bash to execute SQL commands
 Understanding relational database concepts
 
-	----
 
 ## 📌 Author
 
