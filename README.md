@@ -67,8 +67,6 @@ Writing CREATE TABLE, INSERT, JOIN, GROUP BY, and SELECT queries
 Using Bash to execute SQL commands
 Understanding relational database concepts
 
-	----
-
 ## 📌 Author
 
 This project was developed by A Shraddha's as part of freeCodeCamp’s Relational Database Certification.
